@@ -1,3 +1,5 @@
+import { Card } from "./Card";
+import { ImageCard } from "./ImageCard";
 import
 {
   AiFillTwitterCircle,
@@ -28,22 +30,12 @@ export default function Home ()
         <section className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between dark:text-white">
             <h1 className="font-burtons text-xl">React With Tailwindcss</h1>
-            <ul className="flex items-center">
-              <li>
-                <BsFillMoonStarsFill
-                  onClick={ () => setDarkMode(!darkMode) }
-                  className=" cursor-pointer text-2xl"
-                />
-              </li>
-              <li>
-                <a
-                  className="bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
-                  href="#"
-                >
-                  Resume
-                </a>
-              </li>
-            </ul>
+            <a
+              className="bg-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
+              href="#"
+            >
+              Resume
+            </a>
           </nav>
           <div className="text-center p-10 py-10">
             <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
@@ -80,46 +72,9 @@ export default function Home ()
             </p>
           </div>
           <div className="lg:flex gap-10">
-            <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
-              <img src={ design } width={ 100 } height={ 100 } />
-              <h3 className="text-lg font-medium pt-8 pb-2  ">
-                Beautiful Designs
-              </h3>
-              <p className="py-2">
-                lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor
-              </p>
-              <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-              <p className="text-gray-800 py-1">Photoshop</p>
-              <p className="text-gray-800 py-1">Illustrator</p>
-              <p className="text-gray-800 py-1">Figma</p>
-              <p className="text-gray-800 py-1">Indesign</p>
-            </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <img className="left-6" src={ code } width={ 100 } height={ 100 } />
-              <h3 className="text-lg font-medium pt-8 pb-2 ">
-                Code your dream project
-              </h3>
-              <p className="py-2">
-                lorem ipsum dolor sit amet, adip lorem ipsum dolor sit amet dolar ipsum
-              </p>
-              <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-              <p className="text-gray-800 py-1">Photoshop</p>
-              <p className="text-gray-800 py-1">Illustrator</p>
-              <p className="text-gray-800 py-1">Figma</p>
-              <p className="text-gray-800 py-1">Indesign</p>
-            </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <img src={ consulting } width={ 100 } height={ 100 } />
-              <h3 className="text-lg font-medium pt-8 pb-2 ">Consulting</h3>
-              <p className="py-2">
-                lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet
-              </p>
-              <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-              <p className="text-gray-800 py-1">Photoshop</p>
-              <p className="text-gray-800 py-1">Illustrator</p>
-              <p className="text-gray-800 py-1">Figma</p>
-              <p className="text-gray-800 py-1">Indesign</p>
-            </div>
+            <Card image={ design } heading="Beautiful Designs" />
+            <Card image={ code } heading="Code your dream project" />
+            <Card image={ consulting } heading="Consulting" />
           </div>
         </section>
         <section className="py-10">
@@ -136,60 +91,13 @@ export default function Home ()
             </p>
           </div>
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-            <div className="basis-1/3 flex-1 ">
-              <img
-                className="rounded-lg object-cover"
-                width={ "100%" }
-                height={ "100%" }
-                layout="responsive"
-                src={ web1 }
-              />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <img
-                className="rounded-lg object-cover"
-                width={ "100%" }
-                height={ "100%" }
-                layout="responsive"
-                src={ web2 }
-              />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <img
-                className="rounded-lg object-cover"
-                width={ "100%" }
-                height={ "100%" }
-                layout="responsive"
-                src={ web3 }
-              />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <img
-                className="rounded-lg object-cover"
-                width={ "100%" }
-                height={ "100%" }
-                layout="responsive"
-                src={ web4 }
-              />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <img
-                className="rounded-lg object-cover"
-                width={ "100%" }
-                height={ "100%" }
-                layout="responsive"
-                src={ web5 }
-              />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <img
-                className="rounded-lg object-cover"
-                width={ "100%" }
-                height={ "100%" }
-                layout="responsive"
-                src={ web6 }
-              />
-            </div>
+            <ImageCard img={ web1 } />
+            <ImageCard img={ web2 } />
+            <ImageCard img={ web3 } />
+            <ImageCard img={ web4 } />
+            <ImageCard img={ web5 } />
+            <ImageCard img={ web6 } />
+
           </div>
         </section>
       </main>
